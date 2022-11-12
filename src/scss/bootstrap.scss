@@ -1,1 +1,37 @@
-@import '~bootstrap/scss/bootstrap';
+$primary: #3C709F;
+$success: #05B44D;  
+$dark: #0c1c2c;
+$light: #fff;
+$secondary: #7299B2;
+
+
+$body-bg: $light;
+
+$headings-font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !default;
+$font-family-sans-serif: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !default;
+
+@import "~bootstrap/scss/bootstrap";
+
+$line-height-base: 1.5;
+$line-height-sm: 1.25;
+$line-height-lg: 2;
+
+/// Slightly lighten a color
+/// @access public
+/// @param {Color} $color - color to tint
+/// @param {Number} $percentage - percentage of `$color` in returned color
+/// @return {Color}
+
+@function tint($color, $percentage) {
+    @return mix(white, $color, $percentage);
+}
+
+/// Slightly darken a color
+/// @access public
+/// @param {Color} $color - color to shade
+/// @param {Number} $percentage - percentage of `$color` in returned color
+/// @return {Color}
+
+@function shade($color, $percentage) {
+  @return mix(black, $color, $percentage);
+}

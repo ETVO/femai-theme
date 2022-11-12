@@ -1,0 +1,27 @@
+// Styles for partials
+@import "./partials/header.scss";
+@import "./partials/footer.scss";
+
+html {
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+body {
+    overflow-y: scroll !important;
+
+    &.error404 {
+        display: flex;
+        flex-flow: column;
+        height: 100vh;
+    }
+}
+
+@media all and (min-width: 1200px) {
+    .container.default-femai {
+        max-width: 900px;
+    }
+}
