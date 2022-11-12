@@ -1,0 +1,7 @@
+# .gitignore
+package-lock.json
+node_modules/
+.vscode/
+assets/css
+assets/js
+assets/fonts/bootstrap-icons
