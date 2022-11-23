@@ -38,12 +38,13 @@ $address_url = "https://google.com/maps/place/" . htmlspecialchars(strip_tags(st
 <footer>
     <div class="footer-1">
 
-        <div class="container default-femai d-flex align-items-center">
+        <div class="container default-femai d-flex align-items-center flex-column flex-md-row">
             <div class="logo me-3">
                 <a href="<?php echo home_url(); ?>">
                     <img class="footer-logo" src="<?php echo get_theme_mod('footer_logo'); ?>" alt="">
                 </a>
             </div>
+            <div class="d-block my-2"></div>
             <div class="social-icons mx-auto ms-md-3">
                 <?php foreach ($social as $link) : ?>
                     <a href="<?php echo $link['url']; ?>" title="<?php echo $link['icon']; ?>" target="_blank">
@@ -51,17 +52,44 @@ $address_url = "https://google.com/maps/place/" . htmlspecialchars(strip_tags(st
                     </a>
                 <?php endforeach; ?>
             </div>
+            <div class="d-block my-2"></div>
             <?php
             wp_nav_menu(
                 array(
                     'theme_location'    => 'footer_menu',
                     'depth'             => 2,
-                    'container_class'   => 'ms-auto',
+                    'container_class'   => 'mx-auto ms-md-auto text-center text-md-start',
                     'menu_class'        => 'navbar-nav',
                     'walker'            => new BS_Menu_Walker()
                 )
             );
             ?>
+        </div>
+    </div>
+
+    <div class="footer-2">
+        <div class="container default-femai d-flex align-items-center flex-column flex-lg-row">
+            <a class="whatsapp-number d-flex align-items-center" href="<?php echo $whatsapp_url; ?>" target="_blank">
+                <span class="icon bi-whatsapp"></span>
+                <span class="number"><?php echo $whatsapp; ?></span>
+            </a>
+            <div class="d-block my-2"></div>
+            <a class="address m-auto text-center" href="<?php echo $address_url; ?>" target="_blank">
+                <?php echo $address; ?>
+            </a>
+            <div class="d-block my-2"></div>
+            <a class="whatsapp-btn btn btn-success d-flex align-items-center" href="<?php echo $whatsapp_url; ?>">
+                <span class="icon bi-whatsapp"></span>
+                <span class="text">femai zap</span>
+            </a>
+        </div>
+    </div>
+
+    <div class="footer-3">
+        <div class="container default-femai d-flex align-items-center">
+            <small class="bottom-text m-auto text-center">
+                <?php echo date('Y'); ?> - FEMAI EMPREENDIMENTOS • DESENVOLVIDO POR <a href="https://www.imobmark.com.br/" target="_blank">IMOBMARK</a>
+            </small>
         </div>
     </div>
 </footer>

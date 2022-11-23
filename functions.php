@@ -4,6 +4,7 @@
  * Theme functions and definitions
  * 
  * @package WordPress
+ * @author Estevão Rolim <ETVO@github.com>
  */
 
 // Exit if accessed directly.
@@ -114,6 +115,9 @@ final class Theme_Functions
 	 */
 	public static function theme_setup()
 	{
+		// Add support for block styles.
+		add_theme_support( 'wp-block-styles' );
+
 		// Register nav menus
 		register_nav_menus(
 			array(

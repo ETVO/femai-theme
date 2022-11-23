@@ -58,6 +58,15 @@
 
 footer {
     background: linear-gradient(90deg, #163147, #2471a0);
+    a {
+        color: #fff !important;
+        font-weight: 400;
+        transition: color .3s;
+
+        &:hover, &:active, &:focus {
+            color: #9ED5F8 !important; 
+        }
+    }
 
     .footer-1 {
         padding: 2rem 0;
@@ -73,15 +82,7 @@ footer {
             font-size: 1.5rem;
 
             a {
-                color: white;
-                text-decoration: none;
                 margin-right: 1rem;
-
-                transition: color .3s;
-
-                &.active, &:active, &:hover {
-                    color: #9ED5F8;
-                }
             }
         }
 
@@ -91,13 +92,57 @@ footer {
                 padding: .25rem 0;
                 font-size: .9rem !important;
                 font-weight: 500;
-                color: #fff;
                 letter-spacing: 0.1rem;
-
-                &.active, &:active, &:hover {
-                    color: #9ED5F8;
-                }
             }
+        }
+    }
+    
+    .footer-2 {
+        padding: 1.5rem 0;
+        background-color: rgba(0, 0, 0, 0.3);
+        color: #fff;
+        
+        .whatsapp-number, .whatsapp-btn {
+            color: #fff;
+            .icon {
+                font-size: 1.25rem;
+                margin-right: .75rem;
+            }
+            
+            .text {
+                font-size: .9rem;
+            }
+        }
+        
+        .address { 
+            font-size: 0.85em;
+
+            p {
+                margin: 0;
+            }
+        }
+        
+        .whatsapp-btn {
+            padding: .25rem 2.5rem;
+            
+            .text {
+                font-weight: 500;
+            }
+
+            &:hover, &:active, &:focus {
+                color: white !important;
+            }
+        }
+    }
+
+    .footer-3 {
+        padding: 1.5rem 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        color: #fff;
+
+        .bottom-text {
+            font-size: .75rem;
+            font-weight: 300;
         }
     }
 }
