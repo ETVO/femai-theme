@@ -34,14 +34,14 @@ new \Kirki\Panel(
     $panel_id,
     [
         'priority'    => 10,
-        'title'       => __('Opções FEMAI'),
+        'title'       => __('Opções Femai'),
     ]
 );
 
 $sections = [
     'rodape'            => 'Rodapé',
     'home'            	=> 'Home',
-    'about'             => 'A FEMAI',
+    'about'             => 'A Femai',
     'empreendimentos'   => 'Empreendimentos',
     'contato'           => 'Contato',
 ];

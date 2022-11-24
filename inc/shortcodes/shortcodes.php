@@ -3,7 +3,7 @@
  * Custom Customizer controls and options
  * 
  * @package WordPress
- * @subpackage GPR-Theme
+ * @subpackage Femai-Theme
  */
     
 // Exit if accessed directly.
@@ -37,14 +37,7 @@ class Theme_Shortcodes {
         $dir = SHORTCODES_DIR;
         
         $codes = array(
-            'empreemdestaque',
-            'sbpe',
-            'form-tilt',
-            'quem-somos',
-            'diferenciais',
-            'portfolio',
-            'empreendimentos',
-            'localizacao',
+            'empreendimentos_em_destaque',
         );
 
         // Add shortcodes

@@ -37,6 +37,12 @@ class CPT_Empreendimentos {
         $args = $this->get_args();
 
         register_post_type($slug, $args);
+
+        register_taxonomy( 'linha', $slug, array(
+            'label'        => ('Linha'),
+            'rewrite'      => array( 'slug' => 'linha' ),
+            'hierarchical' => true,
+        ) );
     }
 
     /**
@@ -134,7 +140,5 @@ class CPT_Empreendimentos {
         return $args;
     }
 }
-
-require_once 'meta-empreendimentos.php';
 
 new CPT_Empreendimentos();

@@ -3,7 +3,7 @@
  * Partial for default content rendering
  * 
  * @package WordPress
- * @subpackage GPR-Theme
+ * @subpackage Femai-Theme
  */
 
 ?>
