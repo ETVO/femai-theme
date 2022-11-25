@@ -5,6 +5,8 @@ function empreendimentos_em_destaque($attrs)
     $attrs = shortcode_atts(array(), $attrs);
 
     $id = 'empreendimentosFemai' . rand(0, date('Y'));
+    $delay = 0;
+    $i = 0;
 
     $post_type = 'empreendimento';
     $orderby = 'date';
@@ -72,6 +74,8 @@ function empreendimentos_em_destaque($attrs)
 
                                 $linha_url = get_term_link($linha->term_id);
 
+                                $delay++;
+
                             ?>
                                 <div class="carousel-item <?php if ($i++ == 0) echo "active"; ?>">
                                     <div class="item col-12 col-sm-6 col-lg-4">
@@ -87,9 +91,9 @@ function empreendimentos_em_destaque($attrs)
                                         </div>
                                         <div class="info">
                                             <div class="info-content">
-                                                <div class="title">
+                                                <a class="title" href="<?php echo $permalink; ?>">
                                                     <h3 class="fs-5 text-uppercase"><?php echo $title; ?></h3>
-                                                </div>
+                                                </a>
                                                 <div class="location">
                                                     <?php echo $localizacao; ?>
                                                 </div>
@@ -105,7 +109,7 @@ function empreendimentos_em_destaque($attrs)
                                                     <span class="text"><?php echo $banheiros; ?></span>
                                                 </div>
                                                 <div class="linha">
-                                                    <a class="badge rounded-pill" href="<?php echo $linha_url; ?>">
+                                                    <a class="rounded-pill" href="<?php echo $linha_url; ?>">
                                                         <?php echo $linha->name; ?>
                                                     </a>
                                                 </div>

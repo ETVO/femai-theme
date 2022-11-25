@@ -1,9 +1,13 @@
+// Styling for forms
+@import './forms.scss';
+
 // Styles for partials
 @import "./partials/header.scss";
 @import "./partials/footer.scss";
 
 // Styles for shortcodes
 @import "./shortcodes/empreendimentos-em-destaque";
+@import "./shortcodes/form-simples";
 
 html {
     scroll-behavior: smooth;
@@ -25,6 +29,11 @@ body {
         flex-flow: column;
         height: 100vh;
     }
+}
+
+*::selection {
+    background-color: var(--bs-primary);
+    color: white;
 }
 
 @media all and (min-width: 1200px) {

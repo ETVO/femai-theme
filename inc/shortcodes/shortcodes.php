@@ -38,6 +38,7 @@ class Theme_Shortcodes {
         
         $codes = array(
             'empreendimentos_em_destaque',
+            'form_simples',
         );
 
         // Add shortcodes

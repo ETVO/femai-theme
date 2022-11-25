@@ -1,8 +1,9 @@
 .cookies-consent {
-    opacity: 0;
+    // opacity: 0;
+    display: none;
     position: fixed;
     bottom: 0;
-    left: 0;
+    right: 0;
 
     transition: opacity 0.5s;
     z-index: 9999;
@@ -13,29 +14,30 @@
     background: white;
 
     max-width: 350px;
-    border-radius: 20px 20px 60px 20px;
+    border-radius: 0 50px;
     box-shadow: -2px 2px 10px 0px rgba(0, 0, 0, 0.3);
 
-    font-size: 0.9rem;
+    text-align: right;
 
     .heading {
         display: flex;
-        flex-flow: row-reverse;
-        font-size: 1.05rem;
+        // flex-flow: row;
+        font-size: 1rem;
         margin-bottom: 0.5rem;
 
         img {
-            height: 30px;
+            height: 20px;
             object-fit: contain;
         }
 
         b {
-            margin: auto auto 0 0;
+            margin: auto 0 0 auto;
             line-height: 1;
         }
     }
 
     .text {
+        font-size: .8rem;
         margin-top: 0;
         margin-bottom: 0.75rem;
     }

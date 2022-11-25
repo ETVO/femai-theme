@@ -10,20 +10,20 @@ use Kirki\Util\Helper;
 
 // Exit if accessed directly.
 if (!defined('ABSPATH')) {
-    exit;
+	exit;
 }
 
 // Do not proceed if Kirki does not exist.
 if (!class_exists('Kirki')) {
-    return;
+	return;
 }
 
 Kirki::add_config(
-    'theme_options_config',
-    [
-        'option_type' => 'theme_mod',
-        'capability'  => 'manage_options',
-    ]
+	'theme_options_config',
+	[
+		'option_type' => 'theme_mod',
+		'capability'  => 'manage_options',
+	]
 );
 
 /**
@@ -31,19 +31,20 @@ Kirki::add_config(
  */
 $panel_id = 'theme_options';
 new \Kirki\Panel(
-    $panel_id,
-    [
-        'priority'    => 10,
-        'title'       => __('Opções Femai'),
-    ]
+	$panel_id,
+	[
+		'priority'    => 10,
+		'title'       => __('Opções Femai'),
+	]
 );
 
 $sections = [
-    'rodape'            => 'Rodapé',
-    'home'            	=> 'Home',
-    'about'             => 'A Femai',
-    'empreendimentos'   => 'Empreendimentos',
-    'contato'           => 'Contato',
+	'rodape'            => 'Rodapé',
+	'home'            	=> 'Home',
+	'about'             => 'A Femai',
+	'empreendimentos'   => 'Empreendimentos',
+	'contato'           => 'Contato',
+	'forms'   => 'Formulários do site',
 ];
 
 $section_title_class = 'customize-section-title';
@@ -51,17 +52,16 @@ $section_title_class = 'customize-section-title';
 /**
  * Add all sections
  */
-foreach($sections as $section_id => $title) {
-    $section_args = [
-        'title' => $title,
-        'panel' => $panel_id
-    ];
+foreach ($sections as $section_id => $title) {
+	$section_args = [
+		'title' => $title,
+		'panel' => $panel_id
+	];
 
-    new \Kirki\Section( 
-        $section_id, 
-        $section_args
-    );
-
+	new \Kirki\Section(
+		$section_id,
+		$section_args
+	);
 }
 
 
@@ -70,19 +70,19 @@ foreach($sections as $section_id => $title) {
 $section = 'rodape';
 
 new \Kirki\Field\Image(
-    [
-        'settings'  => 'footer_logo',
-        'label'     => esc_html__('Logo Rodapé'),
-        'section'   => $section,
-        'default'   => '',
-    ]
+	[
+		'settings'  => 'footer_logo',
+		'label'     => esc_html__('Logo Rodapé'),
+		'section'   => $section,
+		'default'   => '',
+	]
 );
 
 new \Kirki\Field\Generic(
 	[
 		'settings'    => 'contato_title',
 		'section'     => $section,
-        'default'   => 'Contatos',
+		'default'   => 'Contatos',
 		'choices'     => [
 			'element' => 'h3',
 			'class'   => $section_title_class,
@@ -118,7 +118,7 @@ new \Kirki\Field\Generic(
 	[
 		'settings'    => 'redes_title',
 		'section'     => $section,
-        'default'   => 'Redes Sociais',
+		'default'   => 'Redes Sociais',
 		'choices'     => [
 			'element' => 'h3',
 			'class'   => $section_title_class,
@@ -127,38 +127,38 @@ new \Kirki\Field\Generic(
 );
 
 new \Kirki\Field\Repeater(
-    [
-        'settings'    => 'social_icons',
+	[
+		'settings'    => 'social_icons',
 		'label'       => __('Ícones Redes Sociais'),
 		'section'     => $section,
-        'button_label' => esc_html__('Adicionar nova'),
-        'row_label' => [
-            'type'  => 'field',
-            'value' => __('Ícone'),
-            'field' => 'icon',
-        ],
+		'button_label' => esc_html__('Adicionar nova'),
+		'row_label' => [
+			'type'  => 'field',
+			'value' => __('Ícone'),
+			'field' => 'icon',
+		],
 		'default'     => [
 			[
-                'icon' => 'facebook',
-                'url'  => 'https://www.facebook.com/',
-            ],
-            [
-                'icon' => 'instagram',
-                'url'  => 'https://www.instagram.com/',
-            ],
+				'icon' => 'facebook',
+				'url'  => 'https://www.facebook.com/',
+			],
+			[
+				'icon' => 'instagram',
+				'url'  => 'https://www.instagram.com/',
+			],
 		],
 		'fields'      => [
 			'icon' => [
-                'type' => 'text',
-                'label' => __('Ícone'),
-                'description' => __('Utilize os ícones do') . ' Bootstrap Icons',
-            ],
-            'url'  => [
-                'type' => 'text',
-                'label' => __('Link'),
-            ],
+				'type' => 'text',
+				'label' => __('Ícone'),
+				'description' => __('Utilize os ícones do') . ' Bootstrap Icons',
+			],
+			'url'  => [
+				'type' => 'text',
+				'label' => __('Link'),
+			],
 		],
-    ]
+	]
 );
 
 
@@ -172,7 +172,7 @@ new \Kirki\Field\Generic(
 	[
 		'settings'    => 'sbpe_title',
 		'section'     => $section,
-        'default'   => 'SBPE',
+		'default'   => 'SBPE',
 		'choices'     => [
 			'element' => 'h3',
 			'class'   => $section_title_class,
@@ -198,7 +198,7 @@ new \Kirki\Field\Generic(
 	[
 		'settings'    => 'quem_somos_title',
 		'section'     => $section,
-        'default'   => 'Quem Somos',
+		'default'   => 'Quem Somos',
 		'choices'     => [
 			'element' => 'h3',
 			'class'   => $section_title_class,
@@ -218,7 +218,7 @@ new \Kirki\Field\Generic(
 	[
 		'settings'    => 'diferenciais_title',
 		'section'     => $section,
-        'default'   => 'Diferenciais',
+		'default'   => 'Diferenciais',
 		'choices'     => [
 			'element' => 'h3',
 			'class'   => $section_title_class,
@@ -228,39 +228,38 @@ new \Kirki\Field\Generic(
 
 
 new \Kirki\Field\Repeater(
-    [
-        'settings'    => 'diferenciais_lista',
+	[
+		'settings'    => 'diferenciais_lista',
 		'label'       => __('Diferenciais'),
 		'section'     => $section,
-        'button_label' => esc_html__('Adicionar novo'),
-        'row_label' => [
-            'type'  => 'field',
-            'value' => __('Diferencial'),
-            'field' => 'desc',
-        ],
-		'default'     => [
+		'button_label' => esc_html__('Adicionar novo'),
+		'row_label' => [
+			'type'  => 'field',
+			'value' => __('Diferencial'),
+			'field' => 'desc',
 		],
+		'default'     => [],
 		'fields'      => [
 			'icon' => [
-                'type' => 'text',
-                'label' => __('Ícone'),
-                'description' => __('Utilize os ícones do') . ' Bootstrap Icons',
-            ],
-            'desc'  => [
-                'type' => 'text',
-                'label' => __('Descrição'),
-            ],
+				'type' => 'text',
+				'label' => __('Ícone'),
+				'description' => __('Utilize os ícones do') . ' Bootstrap Icons',
+			],
+			'desc'  => [
+				'type' => 'text',
+				'label' => __('Descrição'),
+			],
 		],
-    ]
+	]
 );
 
 new \Kirki\Field\Image(
-    [
-        'settings'  => 'diferenciais_image',
-        'label'     => esc_html__('Imagem'),
-        'section'   => $section,
-        'default'   => '',
-    ]
+	[
+		'settings'  => 'diferenciais_image',
+		'label'     => esc_html__('Imagem'),
+		'section'   => $section,
+		'default'   => '',
+	]
 );
 
 
@@ -273,7 +272,7 @@ new \Kirki\Field\Generic(
 	[
 		'settings'    => 'local_title',
 		'section'     => $section,
-        'default'   => 'Localização',
+		'default'   => 'Localização',
 		'choices'     => [
 			'element' => 'h3',
 			'class'   => $section_title_class,
@@ -282,12 +281,12 @@ new \Kirki\Field\Generic(
 );
 
 new \Kirki\Field\Image(
-    [
-        'settings'  => 'local_logo',
-        'label'     => esc_html__('Logo'),
-        'section'   => $section,
-        'default'   => '',
-    ]
+	[
+		'settings'  => 'local_logo',
+		'label'     => esc_html__('Logo'),
+		'section'   => $section,
+		'default'   => '',
+	]
 );
 
 new \Kirki\Field\Textarea(
@@ -307,7 +306,28 @@ $section = 'empreendimentos';
 new \Kirki\Field\Dropdown_Pages(
 	[
 		'settings' => 'empreendimentos_page',
-		'label'    => __( 'Página de Empreendimentos'),
+		'label'    => __('Página de Empreendimentos'),
+		'section'  => $section,
+	]
+);
+
+
+/** ----- Formulários ----- */
+
+$section = 'forms';
+
+new \Kirki\Field\Text(
+	[
+		'settings' => 'form_simple',
+		'label'    => __('Shortcode do Formulário simples'),
+		'section'  => $section,
+	]
+);
+
+new \Kirki\Field\Text(
+	[
+		'settings' => 'form_contact',
+		'label'    => __('Shortcode do Formulário da página Contato'),
 		'section'  => $section,
 	]
 );
