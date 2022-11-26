@@ -1,0 +1,33 @@
+
+.blog-recentes {
+    padding: 4rem 0;
+    background: #EDF0F2;
+
+    .title h2 {
+        font-weight: 600;
+        margin-bottom: 1rem;
+    }
+
+    .container > .action {
+        margin-top: 2.5rem;
+        display: flex;
+        a {
+            margin: 0 auto;
+            color: white;
+            background: #7299B2;
+            padding: .375rem 3rem;
+            border-radius: 10px;
+            font-weight: 500;
+            font-size: .9rem;
+
+            transition: background .3s;
+
+            &:hover,
+            &:active,
+            &:focus {
+                background: #80aac4;
+            }
+        }
+    }
+
+}

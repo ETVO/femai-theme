@@ -13,7 +13,7 @@ function empreendimentos_em_destaque($attrs)
     $order = 'DESC';
 
     // Posts Per Page (-1 means it shows all)
-    $ppp = 3;
+    $ppp = -1;
 
     // WP_Query arguments
     $args = array(
@@ -72,53 +72,71 @@ function empreendimentos_em_destaque($attrs)
 
                                 $linha = get_the_terms($post->ID, 'linha')[0];
 
-                                $linha_url = get_term_link($linha->term_id);
+                                if ($linha)
+                                    $linha_url = get_term_link($linha->term_id);
 
                                 $delay++;
 
                             ?>
                                 <div class="carousel-item <?php if ($i++ == 0) echo "active"; ?>">
                                     <div class="item col-12 col-sm-6 col-lg-4">
-                                        <div class="image">
-                                            <div class="inner">
-                                                <div class="etiqueta">
-                                                    <span><?php echo $etiqueta; ?></span>
-                                                </div>
-                                                <a href="<?php echo $permalink; ?>">
-                                                    <img src="<?php echo $image_url; ?>" alt="<?php echo $image_alt; ?>">
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="info">
-                                            <div class="info-content">
-                                                <a class="title" href="<?php echo $permalink; ?>">
-                                                    <h3 class="fs-5 text-uppercase"><?php echo $title; ?></h3>
-                                                </a>
-                                                <div class="location">
-                                                    <?php echo $localizacao; ?>
-                                                </div>
-                                            </div>
-                                            <div class="divider"></div>
-                                            <div class="info-content">
-                                                <div class="carac">
-                                                    <img class="icon me-2" src="<?php echo THEME_IMG_URI . '/dormitorio.svg' ?>">
-                                                    <span class="text"><?php echo $dormitorios; ?></span>
-                                                </div>
-                                                <div class="carac">
-                                                    <img class="icon me-2" src="<?php echo THEME_IMG_URI . '/banheiro.svg' ?>">
-                                                    <span class="text"><?php echo $banheiros; ?></span>
-                                                </div>
-                                                <div class="linha">
-                                                    <a class="rounded-pill" href="<?php echo $linha_url; ?>">
-                                                        <?php echo $linha->name; ?>
+                                        <div class="card h-100">
+                                            <div class="image">
+                                                <div class="inner">
+                                                    <div class="etiqueta <?php if (!$etiqueta) echo 'd-none'; ?>">
+                                                        <span><?php echo $etiqueta; ?></span>
+                                                    </div>
+                                                    <a href="<?php echo $permalink; ?>">
+                                                        <?php if ($image_url) : ?>
+                                                            <img src="<?php echo $image_url; ?>" alt="<?php echo $image_alt; ?>">
+                                                        <?php else : ?>
+                                                            <div class="img-not-found">
+                                                                <span class="bi-buildings"></span>
+                                                            </div>
+                                                        <?php endif; ?>
                                                     </a>
                                                 </div>
                                             </div>
-
+                                            <div class="card-body">
+                                                <div class="info">
+                                                    <div class="info-content">
+                                                        <a class="title" href="<?php echo $permalink; ?>">
+                                                            <h3 class="fs-5 text-uppercase"><?php echo $title; ?></h3>
+                                                        </a>
+                                                        <div class="location">
+                                                            <?php echo $localizacao; ?>
+                                                        </div>
+                                                    </div>
+                                                    <div class="divider"></div>
+                                                    <div class="info-content">
+                                                        <?php if ($dormitorios) : ?>
+                                                            <div class="carac">
+                                                                <img class="icon me-2" src="<?php echo THEME_IMG_URI . '/dormitorio.svg' ?>">
+                                                                <span class="text"><?php echo $dormitorios; ?></span>
+                                                            </div>
+                                                        <?php endif; ?>
+                                                        <?php if ($banheiros) : ?>
+                                                            <div class="carac">
+                                                                <img class="icon me-2" src="<?php echo THEME_IMG_URI . '/banheiro.svg' ?>">
+                                                                <span class="text"><?php echo $banheiros; ?></span>
+                                                            </div>
+                                                        <?php endif; ?>
+                                                        <?php if ($linha) : ?>
+                                                            <div class="linha">
+                                                                <span class="rounded-pill">
+                                                                    <?php echo $linha->name; ?>
+                                                                </span>
+                                                            </div>
+                                                        <?php endif; ?>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card-footer">
+                                                <a class="action btn btn-success" href="<?php echo $permalink; ?>">
+                                                    Saiba Mais <span class="bi-chevron-right"></span>
+                                                </a>
+                                            </div>
                                         </div>
-                                        <a class="action btn btn-success" href="<?php echo $permalink; ?>">
-                                            Saiba Mais <span class="bi-chevron-right"></span>
-                                        </a>
                                     </div>
                                 </div>
 

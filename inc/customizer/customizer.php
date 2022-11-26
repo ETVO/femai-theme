@@ -42,9 +42,10 @@ $sections = [
 	'rodape'            => 'Rodapé',
 	'home'            	=> 'Home',
 	'about'             => 'A Femai',
+	'blog'             	=> 'Blog',
 	'empreendimentos'   => 'Empreendimentos',
 	'contato'           => 'Contato',
-	'forms'   => 'Formulários do site',
+	'forms'   			=> 'Formulários do site',
 ];
 
 $section_title_class = 'customize-section-title';
@@ -328,6 +329,27 @@ new \Kirki\Field\Text(
 	[
 		'settings' => 'form_contact',
 		'label'    => __('Shortcode do Formulário da página Contato'),
+		'section'  => $section,
+	]
+);
+
+
+/** ----- Blog ----- */
+
+$section = 'blog';
+
+new \Kirki\Field\Image(
+	[
+		'settings'  => 'blog_heading_image',
+		'label'     => esc_html__('Imagem de fundo Cabeçalho'),
+		'section'   => $section,
+		'default'   => '',
+	]
+);
+new \Kirki\Field\Text(
+	[
+		'settings' => 'blog_heading_title',
+		'label'    => __('Título do Cabeçalho'),
 		'section'  => $section,
 	]
 );

@@ -39,6 +39,8 @@ class Theme_Shortcodes {
         $codes = array(
             'empreendimentos_em_destaque',
             'form_simples',
+            'empreendimentos_grid',
+            'blog_recentes',
         );
 
         // Add shortcodes

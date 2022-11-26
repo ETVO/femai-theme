@@ -1,0 +1,180 @@
+$control-icon-size: 1.5rem;
+
+.empreendimentos-grid {
+    padding: 4rem 0;
+
+    .title h2 {
+        font-weight: 600;
+        margin-bottom: 2rem;
+    }
+
+    .posts {
+        .item {
+            padding: 0.35rem;
+
+            .card {
+                background: none;
+                border: none;
+
+                &-body {
+                    background: white;
+                    padding: 0;
+                }
+
+                &-footer {
+                    border: none;
+                    padding: 0;
+                }
+            }
+
+            .image {
+                display: flex;
+                .inner {
+                    position: relative;
+                    margin: auto;
+                    width: calc(100% - 1.5rem);
+                    overflow: hidden;
+                    border-radius: 0 18px;
+
+                    .etiqueta {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        z-index: 2;
+
+                        transform: rotate(-40deg) translate(-55px, -5px);
+                        text-align: center;
+
+                        padding: 0.25rem 3rem;
+
+                        background: linear-gradient(202.43deg, #1b3a56 -10.39%, #226995 89.87%);
+                        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.35);
+                        font-size: 0.9rem;
+                        color: white;
+                        text-transform: uppercase;
+
+                        display: block;
+                    }
+
+                    a {
+                        display: block;
+
+                        img {
+                            display: block;
+                            max-width: 100%;
+                            min-height: 200px;
+                            object-fit: cover;
+
+                            transition: transform 0.3s;
+                            z-index: 1;
+
+                            &:hover,
+                            &:active,
+                            &:focus {
+                                transform: scale(1.1);
+                            }
+                        }
+                    }
+                }
+            }
+
+            .info {
+                margin-top: -40%;
+                background: #fff;
+                padding: calc(40% + 1rem) 0.75rem 1rem;
+                border-radius: 18px 18px 0 0;
+
+                &-content {
+                    padding: 0 0.5rem;
+                }
+
+                .title {
+                    h3 {
+                        font-weight: 600;
+                        color: #333;
+                        margin-bottom: .5rem;
+                        transition: color 0.3s;
+                    }
+
+                    &:hover,
+                    &:active,
+                    &:focus {
+                        h3 {
+                            color: #6a6a6a;
+                        }
+                    }
+                }
+
+                .location {
+                    color: #6a6a6a;
+                    font-size: 0.8rem;
+                }
+            }
+
+            .action {
+                display: block;
+                border-radius: 0 0 16px 16px;
+                text-transform: uppercase;
+                font-size: 0.8rem;
+                font-weight: 500;
+                padding: 0.5rem;
+                color: white;
+            }
+        }
+    }
+
+    .container > .action {
+        margin-top: 3rem;
+        display: flex;
+        a {
+            margin: 0 auto;
+            color: white;
+            background: #7299B2;
+            padding: .5rem 4rem;
+            border-radius: 10px;
+            font-weight: 500;
+            font-size: .9rem;
+
+            transition: background .3s;
+
+            &:hover,
+            &:active,
+            &:focus {
+                background: #80aac4;
+            }
+        }
+    }
+
+    &.no-texture {
+        .posts {
+            .item {
+    
+                .card {
+                    &-body {
+                        background: #f3f3f3;
+                    }
+                }
+                
+                .info {
+                    background: #f3f3f3;
+                }
+            }
+        }
+    }
+}
+
+@media all and (max-width: 576px) {
+    .empreendimentos-em-destaque {
+        padding: 3rem 0 2rem;
+
+        .title h2 {
+            margin-bottom: 2rem;
+        }
+
+        .posts {
+            .item {
+                padding: 0;
+            }
+        }
+    }
+}

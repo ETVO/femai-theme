@@ -4,10 +4,14 @@
 // Styles for partials
 @import "./partials/header.scss";
 @import "./partials/footer.scss";
+@import "./partials/blog.scss";
+@import "./partials/pagination.scss";
 
 // Styles for shortcodes
 @import "./shortcodes/empreendimentos-em-destaque";
+@import "./shortcodes/empreendimentos-grid";
 @import "./shortcodes/form-simples";
+@import "./shortcodes/blog-recentes";
 
 html {
     scroll-behavior: smooth;
