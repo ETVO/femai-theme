@@ -1,0 +1,82 @@
+.address-map {
+    position: relative;
+
+    iframe {
+        width: 100% !important;
+        height: 400px;
+        object-position: right;
+        object-fit: cover;
+    }
+    
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 20%;
+        height: 100%;
+        background-color: rgba(#0E2231, 0.9);        
+
+        padding: 1.5rem 4rem;
+
+        text-align: center;
+
+        .logo {
+            svg, img {
+                width: 200px;
+            }
+        }
+
+        .address {
+            color: white;
+            font-weight: 300;
+            margin: 3rem 0;
+
+            p {
+                margin: 0;
+            }
+        }
+        
+        .action a {
+            font-size: .85rem;
+            padding: .375rem 3rem;
+        }
+    }
+}
+
+@media all and (max-width:992px) {
+    .address-map {
+        .overlay {
+            left: 100px;
+        }
+    }
+}
+
+@media all and (max-width:767px) {
+    .address-map {
+
+        iframe {
+            height: 250px;
+        }
+
+        .overlay {
+            position: relative;
+            left: 0;
+            max-width: unset;
+            width: 100%;
+            height: auto;
+
+            padding: 2rem 1rem;
+
+            .logo {
+                text-align: center;
+                svg, img {
+                    
+                    max-width: 190px;
+                }
+            }
+
+            .address {
+                text-align: center;
+            }
+        }
+    }
+}

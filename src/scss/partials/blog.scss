@@ -1,82 +1,79 @@
 .blog-feed {
     padding: 2rem 0;
 
-    .container {
-        .posts {
-            .post {
-                max-width: 300px;
-                padding: .35rem;
-                .card {
-                    border: 1px solid #c2c2c2;
-                    border-radius: 0 25px;
+    .posts {
+        .post {
+            max-width: 300px;
+            padding: 0.35rem;
+            .card {
+                border: 1px solid #c2c2c2;
+                border-radius: 0 25px;
+                overflow: hidden;
+
+                .image {
+                    display: block;
+                    position: relative;
+                    width: 100%;
                     overflow: hidden;
 
-                    .image {
+                    a {
                         display: block;
-                        position: relative;
-                        width: 100%;
-                        overflow: hidden;
 
-                        a {
+                        img {
                             display: block;
+                            width: 100%;
+                            min-height: 200px;
+                            max-height: 250px;
+                            object-fit: cover;
 
-                            img {
-                                display: block;
-                                width: 100%;
-                                min-height: 200px;
-                                max-height: 250px;
-                                object-fit: cover;
-
-                                transition: transform 0.3s;
-                                z-index: 1;
-
-                                &:hover,
-                                &:active,
-                                &:focus {
-                                    transform: scale(1.1);
-                                }
-                            }
-                        }
-                    }
-
-                    &-body {
-                        .categories {
-                            font-size: .8rem;
-                            color: #6a6a6a;
-                        }
-
-                        .title h3 {
-                            font-size: 1rem;
-                            font-weight: 600;
-                            color: #333333;
-
-                            transition: color .3s;
+                            transition: transform 0.3s;
+                            z-index: 1;
 
                             &:hover,
                             &:active,
                             &:focus {
-                                color: #6a6a6a;
+                                transform: scale(1.1);
                             }
                         }
                     }
+                }
 
-                    &-footer {
-                        border-top: none;
-                        padding: 0;
+                &-body {
+                    .categories {
+                        font-size: 0.8rem;
+                        color: #6a6a6a;
+                    }
 
-                        .btn {
-                            display: block;
-                            border-radius: 0;
-                            font-size: 0.875rem;
-                            color: white;
+                    .title h3 {
+                        font-size: 1rem;
+                        font-weight: 600;
+                        color: #333333;
+
+                        transition: color 0.3s;
+
+                        &:hover,
+                        &:active,
+                        &:focus {
+                            color: #6a6a6a;
                         }
+                    }
+                }
+
+                &-footer {
+                    border-top: none;
+                    padding: 0;
+
+                    .btn {
+                        display: block;
+                        border-radius: 0;
+                        font-size: 0.875rem;
+                        color: white;
                     }
                 }
             }
         }
     }
 }
-
 
 .categories-wrap {
     padding: 2rem 0 0;
@@ -86,11 +83,11 @@
     .category {
         border-radius: 0 10px;
         border: solid 1px var(--bs-primary);
-        padding: .275rem .75rem;
+        padding: 0.275rem 0.75rem;
         font-weight: 500;
 
-        transition: background .3s, border .3s;
-        
+        transition: background 0.3s, border 0.3s;
+
         &.selected {
             color: white;
             background: var(--bs-primary);
@@ -106,16 +103,40 @@
     }
 }
 
+.blog-single {
+    padding: 1rem 0;
+
+    .title {
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
+            font-weight: 600;
+            color: var(--bs-primary);
+        }
+    }
+
+    .after-content {
+        margin-top: 2rem;
+        padding: 1rem 0;
+        border-top: #edf0f2 solid 1px;
+
+        .title {
+            margin-bottom: 1rem;
+        }
+    }
+}
+
 @media all and (max-width: 576px) {
-    .blog-feed {    
+    .blog-feed {
         .container {
             .posts {
                 .post {
-                    padding: .35rem 0;
+                    padding: 0.35rem 0;
                     .card {
-    
                         &-body {
-                            padding: .5rem .75rem;
+                            padding: 0.5rem 0.75rem;
                         }
                     }
                 }

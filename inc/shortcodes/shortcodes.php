@@ -41,6 +41,8 @@ class Theme_Shortcodes {
             'form_simples',
             'empreendimentos_grid',
             'blog_recentes',
+            'address_map',
+            'form_multiplo',
         );
 
         // Add shortcodes

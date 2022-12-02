@@ -60,6 +60,34 @@ header {
     }
 }
 
+body.single-empreendimento {
+
+    header {
+        .navbar-nav {    
+            .nav-item {
+                &.current_page_parent {
+                    .nav-link {
+                        color: #333333;
+                        font-weight: 500;
+                        
+                        &:hover {
+                            color: #AAA;
+                        }
+                    }
+                }
+
+                &.archive-menu-item.active {
+                    .nav-link {
+                        color: #0176a9;
+                        font-weight: 700;
+                    }
+                }
+            }
+        }
+
+    }
+}
+
 
 @media all and (max-width: 992px) {
     header {

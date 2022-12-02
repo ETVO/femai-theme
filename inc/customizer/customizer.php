@@ -283,16 +283,16 @@ new \Kirki\Field\Generic(
 
 new \Kirki\Field\Image(
 	[
-		'settings'  => 'local_logo',
+		'settings'  => 'contato_logo',
 		'label'     => esc_html__('Logo'),
 		'section'   => $section,
 		'default'   => '',
 	]
 );
 
-new \Kirki\Field\Textarea(
+new \Kirki\Field\Editor(
 	[
-		'settings' => 'endereco',
+		'settings' => 'contato_address',
 		'label'    => __('Endereço'),
 		'section'  => $section,
 	]
@@ -327,8 +327,8 @@ new \Kirki\Field\Text(
 
 new \Kirki\Field\Text(
 	[
-		'settings' => 'form_contact',
-		'label'    => __('Shortcode do Formulário da página Contato'),
+		'settings' => 'form_multiple',
+		'label'    => __('Shortcode do Formulário múltiplo'),
 		'section'  => $section,
 	]
 );

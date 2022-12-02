@@ -1,0 +1,35 @@
+.form-multiplo {
+    padding: 4rem 0;
+    .nav {
+        .nav-item {
+            button {
+                width: 100%;
+                padding: .5rem .75rem;
+                
+                border: none;
+                color: #6a6a6a;
+                background: transparent;
+                
+                font-weight: 500;
+                text-align: left;
+                text-transform: uppercase;
+
+                &.active {
+                    background: #EDF0F2;
+                }
+            }
+
+        }
+    }
+
+    .departamento-options {
+        margin-right: 2rem;
+    }
+
+    .title h2 {
+        color: var(--bs-primary);
+        font-weight: 600;
+        font-size: calc(1.3rem + 0.6vw) !important;
+        text-transform: uppercase;
+    }
+}

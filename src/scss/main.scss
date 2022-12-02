@@ -12,6 +12,8 @@
 @import "./shortcodes/empreendimentos-grid";
 @import "./shortcodes/form-simples";
 @import "./shortcodes/blog-recentes";
+@import "./shortcodes/address-map";
+@import "./shortcodes/form-multiplo";
 
 html {
     scroll-behavior: smooth;
@@ -43,5 +45,26 @@ body {
 @media all and (min-width: 1200px) {
     .container.default-femai {
         max-width: 900px;
+    }
+}
+
+.searchform {
+    position: relative;
+
+    input {
+        border-radius: 0;
+        background: #f2f2f2;
+        border: 1px solid #999999;
+        padding: .5rem .75rem;
+        border-radius: 0 10px;
+    }
+    
+    button {
+        position: absolute;
+        right: 0;
+        height: 100%;
+        border: none;
+        border-radius: 0 10px 0 0;
+        color: white !important;
     }
 }

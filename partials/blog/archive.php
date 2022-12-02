@@ -30,6 +30,11 @@ if (!$title) $title = 'Blog';
 
             <?php get_template_part("partials/blog/categories"); ?>
         </div>
+        <div class="search d-flex mt-4">
+            <div class="m-auto">
+                <?php get_search_form(); ?>
+            </div>
+        </div>
     </div>
 
     <?php get_template_part("partials/blog/feed"); ?>
